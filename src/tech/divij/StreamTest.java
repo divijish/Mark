@@ -33,7 +33,7 @@ public class StreamTest {
         Long newSum;// = 0L;
         start = System.currentTimeMillis();
 
-        newSum=numList.stream().reduce(0L, Long::sum);
+        newSum=numList.parallelStream().reduce(0L, Long::sum);
 
         end = System.currentTimeMillis();
         totalTimetaken = end-start;

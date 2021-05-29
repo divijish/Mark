@@ -18,7 +18,7 @@ public class StreamTest {
         }
 
         long start = System.currentTimeMillis();
-        long primitivesum = 0L;
+        Long primitivesum = 0L;
 
         for(long i: numList){
             primitivesum += i;

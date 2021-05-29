@@ -1,5 +1,6 @@
 package tech.divij;
 
+import java.io.*;
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 public class StreamTest {
-    public static void main(String ...args){
+    public static void main(String ...args) throws IOException {
 
 
         List<Long> numList = new ArrayList<>();
@@ -26,18 +27,27 @@ public class StreamTest {
 
         long end = System.currentTimeMillis();
 
-        long totalTimetaken = end-start;
-        System.out.println("nonstream time "+totalTimetaken+": sum "+primitivesum);
-        Long newsum = 0L;
+        long totalTimetaken;
+        totalTimetaken = end-start;
+        insertInFile("nonstream time "+totalTimetaken+": sum "+primitivesum+"\n");
+        Long newSum;// = 0L;
         start = System.currentTimeMillis();
 
-        newsum=numList.stream().reduce(0L, (x , y) -> x+y);
+        newSum=numList.stream().reduce(0L, Long::sum);
 
         end = System.currentTimeMillis();
         totalTimetaken = end-start;
-        System.out.println("stream time "+totalTimetaken+": sum "+newsum);
+        insertInFile("stream time "+totalTimetaken+": sum "+newSum+"\n");
 
+    }
 
+    public static void insertInFile(String str) throws IOException {
+        File file = new File("log-file.txt");
+        FileWriter fw = new FileWriter(file, true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(str);
 
+        bw.close();
+        fw.close();
     }
 }

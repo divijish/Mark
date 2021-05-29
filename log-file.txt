@@ -14,3 +14,20 @@ nonstream time 37: sum 143773907137747854
 stream time 135: sum 143773907137747854
 nonstream time 199: sum 2376819790600838179
 stream time 168: sum 2376819790600838179
+With Long wrapper class in normal for loop.nonstream time 186: sum 7607612653188469272
+stream time 115: sum 7607612653188469272
+With Long wrapper class in normal for loop.
+nonstream time 172: sum 3500923469273682138
+stream time 138: sum 3500923469273682138
+With Long wrapper class in normal for loop.
+nonstream time 213: sum -7977543247083597281
+stream time 127: sum -7977543247083597281
+Without Long wrapper class in normal for loop. 
+nonstream time 42: sum -5943359025368006955
+stream time 137: sum -5943359025368006955
+Primitive long type in normal for loop. 
+nonstream time 69: sum -6443289052379074795
+stream time 138: sum -6443289052379074795
+With Long wrapper class in normal for loop.
+nonstream time 195: sum 319333879946871944
+stream time 150: sum 319333879946871944

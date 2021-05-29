@@ -10,7 +10,6 @@ import java.util.Random;
 public class StreamTest {
     public static void main(String ...args) throws IOException {
 
-
         List<Long> numList = new ArrayList<>();
 
         for(int i = 0; i<9000000; i++){
@@ -19,6 +18,14 @@ public class StreamTest {
 
         long start = System.currentTimeMillis();
         Long primitivesum = 0L;
+
+    if(isPrimitive(primitivesum)){
+
+        insertInFile("Primitive long type in normal for loop. \n");
+    }else{
+
+        insertInFile("With Long wrapper class in normal for loop.\n");
+    }
 
         for(long i: numList){
             primitivesum += i;
@@ -49,5 +56,14 @@ public class StreamTest {
 
         bw.close();
         fw.close();
+    }
+
+    public static boolean isPrimitive(long a){
+
+        return true;
+    }
+
+    public static boolean isPrimitive(Long a){
+        return false;
     }
 }
